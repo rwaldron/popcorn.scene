@@ -13,7 +13,7 @@
 
 		return window[ rAF ] || function( callback, element ) {
 			window.setTimeout(function() {
-				callback( +new Date );
+				callback( +new Date() );
 			}, 1000 / 60);
 		};
 	})( window );
@@ -31,7 +31,7 @@
 	}
 
 	// From http://github.com/rwldrn/chromakey.git
-	function canvas( node, id ) {
+	function createCanvas( node, id ) {
 
 		var canvas = document.createElement("canvas");
 
@@ -42,7 +42,7 @@
 		node.parentNode.appendChild( canvas );
 
 		return canvas;
-	};
+	}
 
 	function Scene( instance ) {
 		// Store reference to this instance
@@ -50,14 +50,14 @@
 
 		this.dims = {
 			width: instance.media.width,
-			height: instance.media.height,
+			height: instance.media.height
 		};
 
 		// Track frames for this instance
 		this.frame = 0;
 
 		// Create a context reference
-		this.context = canvas( instance.media, +new Date() ).getContext("2d");
+		this.context = createCanvas( instance.media, +new Date() ).getContext("2d");
 
 		// Sum of RGB in last frame
 		this.last = 0;
@@ -121,7 +121,7 @@
 		average.g = floor( total.g / length );
 		average.b = floor( total.b / length );
 
-		current = values(average).reduce(function(p, v) { return p + v });
+		current = values(average).reduce(function(p, v) { return p + v; });
 		diff = this.last - current;
 
 		// If the absolute difference of the last frame's RGB and
@@ -130,7 +130,7 @@
 		this.instance.trigger("scene", { type: "scene" });
 
 		// Update last RGB sum value
-		this.last = values(average).reduce(function(p, v) { return p + v });
+		this.last = current;
 
 
 		// visual representation, inspired by Mark Boas

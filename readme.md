@@ -1,6 +1,10 @@
 # Popcorn.scene.js
 
-### Provides listenable scene change events, inspired by Mark Boas' [Videofingerprint](http://happyworm.com/jPlayerLab/videofingerprint/v01/)
+### Provides listenable scene change events.
+
+Inspired by Mark Boas' [Videofingerprint](http://happyworm.com/jPlayerLab/videofingerprint/v01/)
+
+Based on [chromaKey](http://github.com/rwldrn/chromakey)
 
 -------------------------
 Contributions should follow these guidelines:

@@ -44,6 +44,8 @@
 		return canvas;
 	}
 
+	// Scene constructor
+	// 1-to-1 with a Popcorn instance.
 	function Scene( instance ) {
 		// Store reference to this instance
 		this.instance = instance;

@@ -82,7 +82,7 @@
 	Scene.prototype.process = function() {
 
 		var average, total, frame, length,
-				pixel, gray, current, diff, k, r, g, b;
+				pixel, gray, current, diff, k;
 
 		average = {
 			r: 0,
@@ -106,15 +106,9 @@
 		for ( k = 0; k < length; k++ ) {
 			pixel = k * 4;
 
-			r = frame.data[ pixel + 0 ];
-			g = frame.data[ pixel + 1 ];
-			b = frame.data[ pixel + 2 ];
-
-			gray = (r + g + b) / 3;
-
-			total.r += r;
-			total.g += g;
-			total.b += b;
+			total.r += frame.data[ pixel + 0 ];
+			total.g += frame.data[ pixel + 1 ];
+			total.b += frame.data[ pixel + 2 ];
 		}
 
 		average.r = floor( total.r / length );

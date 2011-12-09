@@ -18,7 +18,7 @@
 		};
 	})( window );
 
-	// Values from an object, returns an object
+	// Values from an object, returns an array
 	function values( obj ) {
 		var ret = [],
 				prop;

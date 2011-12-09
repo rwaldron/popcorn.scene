@@ -1,6 +1,6 @@
 # Popcorn.scene.js
 
-### Provides listenable scene change events.
+### Provides listenable scene change events. Doesn't actually work yet.
 
 Inspired by Mark Boas' [Videofingerprint](http://happyworm.com/jPlayerLab/videofingerprint/v01/)
 
